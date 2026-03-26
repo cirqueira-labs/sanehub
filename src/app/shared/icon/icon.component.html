@@ -1,0 +1,44 @@
+<svg
+  class="app-icon"
+  [attr.viewBox]="'0 0 24 24'"
+  [attr.width]="size"
+  [attr.height]="size"
+  fill="none"
+  stroke="currentColor"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  [attr.stroke-width]="strokeWidth"
+  aria-hidden="true"
+>
+  @for (shape of shapes; track shape) {
+    @switch (shape.tag) {
+      @case ('path') {
+        <path [attr.d]="shape.attrs['d']"></path>
+      }
+      @case ('circle') {
+        <circle
+          [attr.cx]="shape.attrs['cx']"
+          [attr.cy]="shape.attrs['cy']"
+          [attr.r]="shape.attrs['r']"
+        ></circle>
+      }
+      @case ('ellipse') {
+        <ellipse
+          [attr.cx]="shape.attrs['cx']"
+          [attr.cy]="shape.attrs['cy']"
+          [attr.rx]="shape.attrs['rx']"
+          [attr.ry]="shape.attrs['ry']"
+        ></ellipse>
+      }
+      @case ('rect') {
+        <rect
+          [attr.x]="shape.attrs['x']"
+          [attr.y]="shape.attrs['y']"
+          [attr.width]="shape.attrs['width']"
+          [attr.height]="shape.attrs['height']"
+          [attr.rx]="shape.attrs['rx']"
+        ></rect>
+      }
+    }
+  }
+</svg>

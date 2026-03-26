@@ -1,0 +1,37 @@
+<section class="pricing" id="planos">
+  <div class="pricing-container">
+    <div class="pricing-header">
+      <h2 class="pricing-title">
+        Preço fixo. <span class="pricing-title-highlight">Sem surpresas.</span>
+      </h2>
+      <p class="pricing-subtitle">
+        Diferente do mercado, não cobramos por volumetria excedente. Você sabe exatamente quanto vai
+        pagar.
+      </p>
+    </div>
+
+    <div class="pricing-card-wrapper">
+      <div class="pricing-card" appInView>
+        <div class="pricing-badge">Plano Único Corporativo</div>
+
+        <div class="pricing-price">
+          <div class="price-amount">R$ 997<span class="price-period">/mês</span></div>
+          <p class="price-description">Acesso ilimitado a todas as ferramentas</p>
+        </div>
+
+        <ul class="pricing-list">
+          @for (item of pricingItems; track item) {
+            <li class="pricing-item">
+              <div class="check-icon" aria-hidden="true">
+                <app-icon name="check" [size]="12" [strokeWidth]="3"></app-icon>
+              </div>
+              <span class="item-text">{{ item }}</span>
+            </li>
+          }
+        </ul>
+
+        <button class="pricing-button">Assinar Agora</button>
+      </div>
+    </div>
+  </div>
+</section>

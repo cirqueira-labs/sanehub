@@ -1,0 +1,60 @@
+@use 'variables' as *;
+
+:root {
+  --color-background: #{$background};
+  --color-surface: #{$surface};
+  --color-surface-light: #{$surface-light};
+  --color-primary: #{$primary};
+  --color-primary-hover: #{$primary-hover};
+  --color-secondary: #{$secondary};
+  --color-text-main: #{$text-main};
+  --color-text-muted: #{$text-muted};
+  --color-border: #{$border};
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: $background;
+  color: $text-main;
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: $background;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $surface-light;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $border;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}

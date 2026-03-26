@@ -1,0 +1,54 @@
+<section class="hero" #heroSection>
+  <div class="hero-glow"></div>
+
+  <div class="hero-container">
+    <div class="hero-content" @fadeInUp>
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        <span class="badge-text">Saneamento de Dados Inteligente</span>
+      </div>
+
+      <h1 class="hero-title" @fadeInUpDelay>
+        Sua base de CNPJs <br />
+        <span class="hero-title-gradient">sempre limpa e atualizada</span>
+      </h1>
+
+      <p class="hero-description" @fadeInUpDelay2>
+        O Hub definitivo para padronização cadastral. Pagamento fixo, sem surpresas. Integração
+        nativa com seu ERP.
+      </p>
+
+      <div class="hero-buttons" @fadeInUpDelay3>
+        <button class="hero-button-primary">
+          <app-icon name="zap" [size]="20"></app-icon>
+          Começar Teste Grátis
+        </button>
+        <button class="hero-button-secondary">
+          <app-icon name="code-2" [size]="20"></app-icon>
+          Ver Documentação API
+        </button>
+      </div>
+    </div>
+
+    <div class="hero-dashboard" @fadeInUpDelay4>
+      <div class="dashboard-window">
+        <div class="window-controls">
+          <div class="window-dot red"></div>
+          <div class="window-dot yellow"></div>
+          <div class="window-dot green"></div>
+        </div>
+        <div class="dashboard-stats">
+          @for (stat of stats; track stat.label) {
+            <div class="stat-card">
+              <span class="stat-icon" [class]="stat.color" aria-hidden="true">
+                <app-icon [name]="stat.icon" [size]="32"></app-icon>
+              </span>
+              <div class="stat-value">{{ stat.value }}</div>
+              <div class="stat-label">{{ stat.label }}</div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,57 @@
+<header class="header">
+  <div class="header-container">
+    <div class="logo">
+      <div class="logo-icon" aria-hidden="true">
+        <app-icon name="database" [size]="22"></app-icon>
+      </div>
+      <span class="logo-text">Sanehub</span>
+    </div>
+
+    <nav class="nav-desktop">
+      <a href="#funcionalidades" class="nav-link">Produto</a>
+      <a href="#integracao" class="nav-link">Integração TOTVS</a>
+      <a href="#planos" class="nav-link">Planos</a>
+      <a href="#" class="nav-link">Empresa</a>
+    </nav>
+
+    <div class="cta-desktop">
+      <a href="#" class="login-link">Login</a>
+      <button class="cta-button">Teste Grátis</button>
+    </div>
+
+    <button class="mobile-menu-button" (click)="toggleMobileMenu()">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <line x1="4" y1="6" x2="20" y2="6"></line>
+        <line x1="4" y1="12" x2="20" y2="12"></line>
+        <line x1="4" y1="18" x2="20" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+
+  @if (isMobileMenuOpen) {
+    <div class="mobile-menu">
+      <nav class="mobile-nav">
+        <a href="#funcionalidades" class="mobile-nav-link" (click)="toggleMobileMenu()">Produto</a>
+        <a href="#integracao" class="mobile-nav-link" (click)="toggleMobileMenu()"
+          >Integração TOTVS</a
+        >
+        <a href="#planos" class="mobile-nav-link" (click)="toggleMobileMenu()">Planos</a>
+        <a href="#" class="mobile-nav-link" (click)="toggleMobileMenu()">Empresa</a>
+      </nav>
+      <div class="mobile-cta">
+        <a href="#" class="login-link">Login</a>
+        <button class="cta-button">Teste Grátis</button>
+      </div>
+    </div>
+  }
+</header>

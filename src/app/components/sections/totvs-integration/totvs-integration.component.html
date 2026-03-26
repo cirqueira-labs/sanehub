@@ -1,0 +1,76 @@
+<section class="integration" id="integracao">
+  <div class="integration-container">
+    <div class="integration-grid">
+      <div class="integration-content" appInView>
+        <h2 class="integration-title">
+          Integração Plug-and-Play com
+          <span class="integration-title-highlight">TOTVS Protheus</span>
+        </h2>
+        <p class="integration-description">
+          Desenvolvido com foco no ecossistema corporativo. Nossa integração utiliza o padrão PO-UI,
+          garantindo uma experiência nativa e fluida para os usuários do seu ERP.
+        </p>
+
+        <ul class="integration-features">
+          @for (feature of features; track feature.title) {
+            <li class="integration-feature">
+              <div class="feature-icon">
+                <app-icon [name]="feature.icon" [size]="24"></app-icon>
+              </div>
+              <div class="feature-content">
+                <h3 class="feature-title">{{ feature.title }}</h3>
+                <p class="feature-desc">{{ feature.desc }}</p>
+              </div>
+            </li>
+          }
+        </ul>
+
+        <button class="integration-link">
+          Ver documentação de integração
+          <app-icon name="arrow-right" [size]="20"></app-icon>
+        </button>
+      </div>
+
+      <div class="integration-visual" appInView [inViewDelay]="100">
+        <div class="visual-card">
+          <div class="visual-glow-primary"></div>
+          <div class="visual-glow-secondary"></div>
+
+          <div class="visual-content">
+            <div class="visual-header">
+              <div class="totvs-badge">
+                <span class="totvs-text">TOTVS</span>
+              </div>
+              <span class="header-title">Atualização Cadastral</span>
+              <div class="header-action"></div>
+            </div>
+
+            <div class="data-row">
+              <div class="data-field">
+                <span class="field-label">CNPJ</span>
+                <span class="field-value">12.345.678/0001-90</span>
+              </div>
+              <span class="data-arrow" aria-hidden="true">→</span>
+              <div class="data-field aligned">
+                <span class="field-label text-green">Status Sanehub</span>
+                <span class="field-value text-green">✓ Validado</span>
+              </div>
+            </div>
+
+            <div class="data-row">
+              <div class="data-field">
+                <span class="field-label">Razão Social</span>
+                <span class="field-value">EMPRESA EXEMPLO LTDA</span>
+              </div>
+              <div class="data-sync">
+                <app-icon name="zap" [size]="12"></app-icon>
+              </div>
+            </div>
+
+            <div class="visual-button">Sincronizar Dados</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

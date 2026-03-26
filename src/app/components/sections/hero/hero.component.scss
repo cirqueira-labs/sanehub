@@ -1,0 +1,263 @@
+@use '../../../../variables' as *;
+
+.hero {
+  position: relative;
+  padding: 8rem 0 5rem;
+  overflow: hidden;
+
+  @media (min-width: 1024px) {
+    padding: 12rem 0 8rem;
+  }
+}
+
+.hero-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  background-color: rgba($secondary, 0.2);
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+}
+
+.hero-container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+  position: relative;
+  z-index: 10;
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  background-color: rgba($surface, 0.88);
+  border: 1px solid $border;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+.badge-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: $primary;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.badge-text {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: $text-muted;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin-bottom: 2rem;
+  line-height: 1.1;
+
+  @media (min-width: 768px) {
+    font-size: 4.5rem;
+  }
+}
+
+.hero-title-gradient {
+  background: linear-gradient(135deg, $primary, $secondary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-description {
+  font-size: 1.25rem;
+  color: $text-muted;
+  margin-bottom: 2.5rem;
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  @media (min-width: 640px) {
+    flex-direction: row;
+  }
+}
+
+.hero-button-primary {
+  width: 100%;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  background-color: $primary;
+  color: $background;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: background-color 0.2s ease;
+
+  @media (min-width: 640px) {
+    width: auto;
+  }
+
+  &:hover {
+    background-color: $primary-hover;
+  }
+}
+
+.hero-button-secondary {
+  width: 100%;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  background-color: $surface;
+  border: 1px solid $border;
+  color: $text-main;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: background-color 0.2s ease;
+
+  @media (min-width: 640px) {
+    width: auto;
+  }
+
+  &:hover {
+    background-color: $surface-light;
+  }
+}
+
+.hero-dashboard {
+  margin-top: 5rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 64rem;
+
+  @media (min-width: 1024px) {
+    margin-top: 5rem;
+  }
+}
+
+.dashboard-window {
+  border-radius: 0.75rem;
+  border: 1px solid $border;
+  background-color: rgba($surface, 0.5);
+  backdrop-filter: blur(4px);
+  padding: 1rem;
+  box-shadow:
+    0 25px 50px -12px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(255, 255, 255, 0.02) inset;
+}
+
+.window-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid $border;
+}
+
+.window-dot {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+
+  &.red {
+    background-color: #ef4444;
+  }
+
+  &.yellow {
+    background-color: #eab308;
+  }
+
+  &.green {
+    background-color: #22c55e;
+  }
+}
+
+.dashboard-stats {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.stat-card {
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  background-color: $surface;
+  border: 1px solid $border;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    border-color: rgba($primary, 0.35);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+  }
+}
+
+.stat-value {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.stat-icon {
+  display: inline-flex;
+  margin-bottom: 1rem;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: $text-muted;
+}
+
+.text-primary {
+  color: $primary;
+}
+
+.text-secondary {
+  color: $secondary;
+}
+
+.text-green {
+  color: #4ade80;
+}

@@ -1,0 +1,26 @@
+<section class="features" id="funcionalidades">
+  <div class="features-container">
+    <div class="features-header">
+      <h2 class="features-title">
+        Tudo que você precisa para <br /><span class="features-title-highlight"
+          >qualidade de dados</span
+        >
+      </h2>
+      <p class="features-subtitle">
+        Ferramentas poderosas projetadas para desenvolvedores e analistas de dados.
+      </p>
+    </div>
+
+    <div class="features-grid">
+      @for (feature of features; track feature.title; let i = $index) {
+        <div class="feature-card" appInView [inViewDelay]="i * 100">
+          <div class="feature-icon">
+            <app-icon [name]="feature.icon" [size]="24"></app-icon>
+          </div>
+          <h3 class="feature-title">{{ feature.title }}</h3>
+          <p class="feature-description">{{ feature.description }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
